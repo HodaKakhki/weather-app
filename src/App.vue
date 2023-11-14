@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <router-view></router-view>
+  <div class="flex flex-col min-h-screen font-Roboto bg-weather-primary">
+    <SiteNavigation />
+    <RouterView></RouterView>
   </div>
 </template>
 
-<script>
-// import { router } from 'vue-router'
-export default {}
+<script setup>
+import { RouterView } from 'vue-router'
+import SiteNavigation from './components/SiteNavigation.vue'
 </script>
 
 <style lang="sass" scoped></style>
