@@ -8,5 +8,5 @@
 </template>
 
 <script setup>
-import AsyncViewCity from '../views/AsyncCityView.vue'
+import AsyncViewCity from '../components/AsyncCityView.vue'
 </script>
