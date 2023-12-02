@@ -105,7 +105,7 @@
 
 <script setup>
 import axios from 'axios'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const getWeatherData = async () => {
@@ -133,4 +133,20 @@ const getWeatherData = async () => {
 
 const weatherData = await getWeatherData()
 console.log(weatherData)
+const router = useRouter()
+
+const removeCity = () => {
+  // Check if 'savedCities' is present in localStorage
+  if (localStorage.getItem('savedCities')) {
+    // Continue with your existing logic to remove the city
+    const cities = JSON.parse(localStorage.getItem('savedCities'))
+    const updatedCities = cities.filter((city) => city.id !== route.query.id)
+    localStorage.setItem('savedCities', JSON.stringify(updatedCities))
+    router.push({ name: 'home' })
+  } else {
+    // Handle the case where 'savedCities' is not present
+    console.warn('No savedCities found in localStorage. Initializing with a default value.')
+    localStorage.setItem('savedCities', JSON.stringify([]))
+  }
+}
 </script>
