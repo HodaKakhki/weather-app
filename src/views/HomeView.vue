@@ -50,9 +50,9 @@ const queryTimeout = ref(null)
 const mapboxSearchResults = ref(null)
 const searchError = ref(null)
 const previewCity = (searchResult) => {
-  console.log(searchResult)
+  //console.log(searchResult)
   const [city, state] = searchResult.place_name.split(',')
-  console.log(city, state)
+  //console.log(city, state)
   router.push({
     name: 'cityView',
     params: { state: state.replaceAll(' ', ''), city: city },

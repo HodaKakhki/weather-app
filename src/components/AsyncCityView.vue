@@ -148,7 +148,7 @@ const removeCity = () => {
     router.push({ name: 'home' })
   } else {
     // Handle the case where 'savedCities' is not present
-    console.warn('No savedCities found in localStorage. Initializing with a default value.')
+    //console.warn('No savedCities found in localStorage. Initializing with a default value.')
     localStorage.setItem('savedCities', JSON.stringify([]))
   }
 }
